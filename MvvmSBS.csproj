@@ -63,6 +63,8 @@
     <Compile Include="Step\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Step\ViewFactory.cs" />
+    <Compile Include="Step\ViewInfrastructure.cs" />
     <Compile Include="Step\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -92,8 +94,8 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Step\View.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
