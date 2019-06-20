@@ -14,12 +14,12 @@ namespace MvvmByStep
 
 		private void Step()
 		{
-			ViewFactory factory = new ViewFactory();
+			Step.ViewFactory factory = new Step.ViewFactory();
 
-			ViewInfrastructure infrastructure = factory.Create();
+			Step.ViewInfrastructure infrastructure = factory.Create();
 
 			infrastructure.View.DataContext = infrastructure.ViewModel;
-			infrastructure.View.Show();			
+			infrastructure.View.Show();
 		}
 	}
 }
