@@ -10,7 +10,7 @@
         Title="View" 
 		SizeToContent="WidthAndHeight"
 		Margin="3"
-		Padding="3"
+		Padding="3" 
 		ResizeMode="NoResize"
 		
 		d:DataContext="{d:DesignInstance step:ViewModel}">
@@ -123,8 +123,8 @@
 		
 		<!-- Buttons -->
 		<UniformGrid Grid.Row="4" Grid.Column="1" Rows="1" Columns="2" HorizontalAlignment="Right">
-			<Button Content="Save" Margin="3" />
-			<Button Content="Erase" Padding="30,0,30,0" Margin="3" />
+			<Button Content="Save" Margin="3" Command="{Binding SaveCommand}" />
+			<Button Content="Erase" Padding="30,0,30,0" Margin="3" Command="{Binding EraseCommand}" />
 		</UniformGrid>
 	</Grid>
 </Window>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Windows.Input;
 
 namespace MvvmByStep.Step
 {
@@ -103,9 +104,15 @@ namespace MvvmByStep.Step
 			}
 		}
 
-		public ViewModel(Model model)
+		public ICommand SaveCommand { get; private set; }
+
+		public ICommand EraseCommand { get; private set; }
+
+		public ViewModel(Model model, ICommand saveCommand, ICommand eraseCommand)
 		{
 			this.model = model;
+			this.SaveCommand = saveCommand;
+			this.EraseCommand = eraseCommand;
 		}
 
 		public event PropertyChangedEventHandler PropertyChanged;

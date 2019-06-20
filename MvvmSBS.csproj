@@ -59,9 +59,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="Step\EraseDelegateCommand.cs" />
     <Compile Include="Step\Model.cs" />
-    <Compile Include="Step\NegatedVisibilityConverter.cs" />
     <Compile Include="Step\NegatedBoolConverter.cs" />
+    <Compile Include="Step\NegatedVisibilityConverter.cs" />
+    <Compile Include="Step\SaveDelegateCommand.cs" />
     <Compile Include="Step\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
