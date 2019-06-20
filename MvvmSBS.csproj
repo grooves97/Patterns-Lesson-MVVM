@@ -60,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Step\Model.cs" />
+    <Compile Include="Step\NegatedVisibilityConverter.cs" />
+    <Compile Include="Step\NegatedBoolConverter.cs" />
     <Compile Include="Step\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>

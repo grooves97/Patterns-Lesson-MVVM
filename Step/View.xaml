@@ -14,6 +14,12 @@
 		ResizeMode="NoResize"
 		
 		d:DataContext="{d:DesignInstance step:ViewModel}">
+
+	<Window.Resources>
+		<step:NegatedBoolConverter x:Key="NegatedBoolConverter" />
+		<BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+		<step:NegatedVisibilityConverter x:Key="NegatedVisibilityConverter" />
+	</Window.Resources>
 	
 	<Grid>
 		<Grid.RowDefinitions>
@@ -30,29 +36,29 @@
 
 		<!-- Name -->
 		<TextBlock Grid.Row="0" Grid.Column="0" Text="Name" VerticalAlignment="Center" Margin="3" />
-		<TextBox Grid.Row="0" Grid.Column="1" Text="This is a person long name with more long text" Margin="3" />
+		<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name}" Margin="3" />
 
 		<!-- Address -->
 		<TextBlock Grid.Row="1" Grid.Column="0" Text="Address" VerticalAlignment="Center" Margin="3" />
-		<TextBox Grid.Row="1" Grid.Column="1" Text="This is an even more long address text to check how it looks in the designer." Margin="3" />
+		<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Address}" Margin="3" />
 
 		<!-- Gender -->
 		<TextBlock Grid.Row="2" Grid.Column="0" Text="Gender" VerticalAlignment="Center" Margin="3" />
 		<StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
 			<StackPanel VerticalAlignment="Center">
-				<RadioButton Content="Male" IsChecked="True" />
-				<RadioButton Content="Female" IsChecked="False" />
+				<RadioButton Content="Male" IsChecked="{Binding IsMale}" />
+				<RadioButton Content="Female" IsChecked="{Binding IsMale, Converter={StaticResource NegatedBoolConverter}}" />
 			</StackPanel>
 			<StackPanel>
-				<Image Source="man.png" Visibility="Visible" Margin="3" />
-				<Image Source="woman.png" Visibility="Collapsed" Margin="3" />
+				<Image Source="man.png" Visibility="{Binding IsMale, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="3" />
+				<Image Source="woman.png" Visibility="{Binding IsMale, Converter={StaticResource NegatedVisibilityConverter}}" Margin="3" />
 			</StackPanel>
 		</StackPanel>
 
 		<!-- Birthdate -->
 		<TextBlock Grid.Row="3" Grid.Column="0" Text="Birthday" VerticalAlignment="Center" Margin="3" />
 		<StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" >
-			<ComboBox Text="17" Margin="3">
+			<ComboBox Text="{Binding BirthDay}" Margin="3">
 				<ComboBoxItem>1</ComboBoxItem>
 				<ComboBoxItem>2</ComboBoxItem>
 				<ComboBoxItem>3</ComboBoxItem>
@@ -85,7 +91,7 @@
 				<ComboBoxItem>30</ComboBoxItem>
 				<ComboBoxItem>31</ComboBoxItem>
 			</ComboBox>
-			<ComboBox Text="12" Margin="3">
+			<ComboBox Text="{Binding BirthMonth}" Margin="3">
 				<ComboBoxItem>1</ComboBoxItem>
 				<ComboBoxItem>2</ComboBoxItem>
 				<ComboBoxItem>3</ComboBoxItem>
@@ -99,7 +105,7 @@
 				<ComboBoxItem>11</ComboBoxItem>
 				<ComboBoxItem>12</ComboBoxItem>
 			</ComboBox>
-			<ComboBox Text="1994" Margin="3">
+			<ComboBox Text="{Binding BirthYear}" Margin="3">
 				<ComboBoxItem>1</ComboBoxItem>
 				<ComboBoxItem>1990</ComboBoxItem>
 				<ComboBoxItem>1991</ComboBoxItem>
