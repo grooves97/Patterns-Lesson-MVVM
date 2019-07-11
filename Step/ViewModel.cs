@@ -104,6 +104,40 @@ namespace MvvmByStep.Step
 			}
 		}
 
+        public string Email
+        {
+            get
+            {
+                return this.model.Email;
+            }
+
+            set
+            {
+                if (this.model.Email != value)
+                {
+                    this.model.Email = value;
+                    this.OnPropertyChanged("Email");
+                }
+            }
+        }
+
+        public string PhoneNumber
+        {
+            get
+            {
+                return this.model.PhoneNumber;
+            }
+
+            set
+            {
+                if (this.model.PhoneNumber != value)
+                {
+                    this.model.PhoneNumber = value;
+                    this.OnPropertyChanged("PhoneNumber");
+                }
+            }
+        }
+
 		public ICommand SaveCommand { get; private set; }
 
 		public ICommand EraseCommand { get; private set; }

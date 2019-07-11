@@ -19,6 +19,8 @@
 			this.ViewModel.BirthYear = 1990;
 			this.ViewModel.IsMale = true;
 			this.ViewModel.Name = string.Empty;
+            this.ViewModel.Email = "user@example.com";
+            this.ViewModel.PhoneNumber = "000-00-00";
 		}
 
 		public bool CanErase(object unused)
